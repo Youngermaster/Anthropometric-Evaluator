@@ -86,7 +86,7 @@ class _ManState extends State<Man> {
 
       // * Equation three
       double weight = double.parse(weightController.text);
-      double height = double.parse(heightController.text);
+      double height = double.parse(heightController.text) / 100;
       double idealBMI = double.parse(idealBMIController.text);
       double carp = double.parse(carpController.text);
       double idealWeight = idealBMI * pow(height, 2);
@@ -262,7 +262,7 @@ class _ManState extends State<Man> {
                             ListTile(
                               title: TextFormField(
                                 decoration: InputDecoration(
-                                    hintText: "Altura (m)",
+                                    hintText: "Altura (cm)",
                                     hintStyle: GoogleFonts.ubuntu(
                                       textStyle: TextStyle(
                                         fontSize: 15.0,
