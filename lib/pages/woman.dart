@@ -133,8 +133,12 @@ class _WomanState extends State<Woman> {
         \n Mujer activa\n- Grasa Yuhasz: ${roundNumber(2, yuhaszFatActiveWoman)}%
         """;
       });
+      printSnackBar('IMC Calculado');
     }
   }
+
+  void printSnackBar(String text) =>
+      Scaffold.of(context).showSnackBar(SnackBar(content: Text(text)));
 
   double roundNumber(int decimals, double number) {
     int fad = pow(10, decimals);
@@ -164,6 +168,7 @@ class _WomanState extends State<Woman> {
         showEquationThreeViewKilos + '\n' + showEquationFour + '\n' + showFolds;
     final data = ClipboardData(text: finalEquation);
     Clipboard.setData(data);
+    printSnackBar('Copiado al portapapeles');
   }
 
   @override
@@ -205,6 +210,9 @@ class _WomanState extends State<Woman> {
                         padding: EdgeInsets.only(top: 20),
                         child: Column(
                           children: <Widget>[
+                            SizedBox(
+                              height: 8.0,
+                            ),
                             Container(
                                 child: Align(
                               alignment: Alignment.centerLeft,
