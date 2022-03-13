@@ -23,13 +23,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
     switch (pageIndex) {
       case 0:
         return _menPage;
-        break;
       case 1:
         return _womenPage;
-        break;
       case 2:
         return _menPage;
-        break;
       default:
     }
   }
